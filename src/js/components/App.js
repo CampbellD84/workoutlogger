@@ -5,7 +5,8 @@ var AddForm = require('./AddForm.js');
 
 function getAppState() {
   return {
-    showForm: AppStore.getShowForm()
+    showForm: AppStore.getShowForm(),
+    workouts: AppStore.getWorkouts()
   }
 }
 
@@ -24,6 +25,7 @@ var App = React.createClass({
     AppActions.showForm();
   },
   render: function(){
+    console.log(this.state.workouts);
     if(this.state.showForm) {
       var form = <AddForm />
     } else {
